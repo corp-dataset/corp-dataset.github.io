@@ -1,0 +1,173 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <!-- Google tag (gtag.js) 
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-28RHX62VC1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-28RHX62VC1');
+        </script>
+        -->
+        <meta charset="utf-8"> 
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"> 
+        <title>CORP</title>
+        <meta content="" name="description"> 
+        <meta content="" name="keywords"> 
+        <!-- Favicons -->         
+        <!-- <link href="assets/img/favicon.png" rel="icon">  -->
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> 
+        <!-- Google Fonts -->         
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet"> 
+        <!-- Vendor CSS Files -->         
+        <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet"> 
+        <link href="assets/vendor/aos/aos.css" rel="stylesheet"> 
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> 
+        <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"> 
+        <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> 
+        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        <!-- Template Main CSS File -->         
+        <link href="assets/css/style.css" rel="stylesheet"> 
+        <!-- =======================================================
+        * Template Name: Moderna - v4.2.0
+        * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->         
+    </head>
+
+    <body>
+        <!-- ======= Header ======= -->         
+        <header id="header" class="fixed-top d-flex align-items-center"> 
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="logo"> 
+                    <h1 class="text-light"><a href="index.html"><span>CORP</span></a></h1>               
+                </div>                 
+                <nav id="navbar" class="navbar"> 
+                    <ul> 
+                        <li>
+                            <a class="active" href="index.html">Home</a>
+                        </li>
+                         <!-- documentation  -->
+                        <li class="dropdown">
+                            <a href="documentation.html"><span>Documentation</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li>
+                                    <a href="documentation.html#data_collection">Data Collection</a>
+                                </li>   
+                                <li>
+                                    <a href="documentation.html#data_format">Anotation Format</a>
+                                </li>                                 
+                                <li>
+                                    <a href="documentation.html#instructions">Instructions</a>
+                                </li>
+                                <li>
+                                    <a href="documentation.html#link">Download Links</a>
+                                </li>                                 
+                            </ul>                         
+                        </li>
+                    </ul>                     
+                    <i class="bi bi-list mobile-nav-toggle"></i> 
+                </nav>
+            </div>             
+        </header>
+        <!-- End Header -->         
+
+        <main id="main">        
+            <!-- ======= Features Section ======= -->             
+            <section class="features"> 
+                <div class="container">
+                    <div class="row aos-init aos-animate" data-aos="fade-up"></div>                     
+                    <h3><b>About</b></h3>
+                    <p> 
+                        In recent years, many roadside perception datasets have been created to accelerate the development of perception methods in urban environments, 
+                        most of which predominantly concentrate on the intensive traffic in highway and urban road, or simply pin a fixed number of sensors to an 
+                        intersection. However, perception tasks in a campus setting require different perspectives compared to their urban counterparts in the following aspects: 
+                    </p>
+                    <p> 
+                        - (1) Pedestrians, Bicycles and Tricycles exhibit a higher prevalence in a campus setting than in urban traffic.
+                    </p>
+                    <p>
+                        - (2) More occlusions happen due to crowded buildings, dense vegetation, slimmer paths and frequent corners in the campus environment.
+                    </p>
+                    <p>
+                         - (3) while lane lines may present on a campus road, the absence of traffic signals and the scarcity of traffic regulations make it challenging to anticipate the behaviors of road users.
+                    </p>
+                    <p> 
+                        Although datasets exist for perception tasks in campus scenes, such as ShanghaiTech, NWPU, USyd and Campus3D, none of them have 3D information for targets 
+                        from roadside view, not to mention the absence of consistent annotations to identify the same targets traversing across perception devices, which are critical 
+                        for seamless and persistent object detection & tracking. Therefore, we present CORP, the first multi-modal <b>C</b>ampus-<b>O</b>riented <b>R</b>oadside <b>P</b>erception 
+                        dataset, and anticipate that CORP will be a beneficial resource for the advancement of campus-oriented perception methods.
+                    </p>
+                    
+                    <div class="col-md-7 order-2 order-md-1 pt-5"></div>
+
+                    <p>
+                        The campus area is divided into 3 regions based on different detection range, where a total number of 18 cameras and 9 LiDARs are involved in the dataset. 
+                        <b>A glimpse of the CORP</b> is shown blow, where point clouds from the 3 regions are colored in red(A), blue(B) and black(C), respectively, with the sensor configuration 
+                        for each region attached beneath.
+                    </p>
+
+                    <div class="col-md-7 order-2 order-md-1 pt-5"></div>
+                    <img src="assets/img/corp_visualization_latest.gif" style="width: 100%">
+
+                    <div class="row aos-init aos-animate" data-aos="fade-up">
+                        <div class="col-md-7 order-2 order-md-1 pt-5"></div>                        
+                    </div>
+
+                    <div style="text-align: center; width: 100%;">
+                        <img src="assets/img/sensors_in_each_region.png" style="width: 60%">
+                    </div>
+
+                    <div class="col-md-7 order-2 order-md-1 pt-5"></div>    
+
+                    <p>
+                        If you have any questions about CORP, please contact <a href = "mailto: wbb@iai.ustc.edu.cn">wbb@iai.ustc.edu.cn</a>. 
+                        The official website of our research group is <a href = "http://www.sonic-car.net/">http://www.sonic-car.net/</a>.
+                    </p>
+
+                    <!--
+                    <h3><b>Citation</b></h3>
+                    <pre style="text-align: left; white-space: pre; display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"> 
+                        @article{wang2024corp,
+                            title={CORP: A Real-World Road Corner Case Dataset for Object Detection in Autonomous Driving},
+                            author={Li, Kaican and Chen, Kai and Wang, Haoyu and Hong, Lanqing and Ye, Chaoqiang and Han, Jianhua and Chen, Yukuai and Zhang, Wei and Xu, Chunjing and Yeung, Dit-Yan and others},
+                            journal={arXiv preprint arXiv:2203.07724},
+                            year={2022}}
+                    </pre>
+                    -->
+                </div>               
+            </section>
+            <!-- End Features Section -->             
+        </main>
+        <!-- End #main -->         
+        <!-- ======= Footer ======= -->         
+        <footer id="footer" data-aos-easing="ease-in-out" data-aos-duration="500" class="aos-init"> 
+            <div class="container"> 
+                <div class="credits"> 
+                    <!-- All the links in the footer should remain intact. -->                     
+                    <!-- You can delete the links only if you purchased the pro version. -->                     
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->                     
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->                     
+                    Designed by 
+                    <a href="https://bootstrapmade.com/">BootstrapMade</a> 
+                </div>                 
+            </div>             
+        </footer>
+        <!-- End Footer -->         
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> 
+        <!-- Vendor JS Files -->         
+        <script src="assets/vendor/aos/aos.js"></script>         
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>         
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>         
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>         
+        <script src="assets/vendor/php-email-form/validate.js"></script>         
+        <script src="assets/vendor/purecounter/purecounter.js"></script>         
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>         
+        <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>         
+        <!-- Template Main JS File -->         
+        <script src="assets/js/main.js"></script>
+    </body>     
+</html>
