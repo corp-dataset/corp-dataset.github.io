@@ -99,21 +99,42 @@
 
                     <span class="anchor" id="data_collection"></span>
                     <h3><b>Data collection</b></h3>
-                    <p> To build CORP, RGB and infrared images are captured at a rate of 20 Hz while maintaining GPS time synchronization. 
-                        Simultaneously, the LiDAR data is acquired at 10 Hz with the same source for recording timestamps. 
-                        Each episode of the time sequence data in CORP lasts for 30 to 32 seconds with image and LiDAR 
-                        frames from multiple sensors, the quantity of which varies across different regions. Subsequent 
-                        to data collection, a precise alignment between the camera and the LiDAR timelines is performed in 
-                        a post-processing manner with a tolerance of 20 milliseconds, to arrive at a final frame rate of 
-                        10 Hz for the data episodes. For scene diversity and considering the specificity of the campus 
-                        environment, we select the data based on sparsity of the scene and get an average of 10 targets 
-                        per LiDAR frame. Moreover, around 20% of the data frames are recorded in the evening and 80% in 
-                        the daytime including morning, noon, and dusk with clear and cloudy weather conditions. </p>
+                    <p> To build CORP, images are captured at a rate of 20 Hz while maintaining GPS time synchronization. Simultaneously, the LiDAR data is acquired at 10 Hz with the same source for recording timestamps. Each episode of the time sequence data in CORP lasts for 30 to 32 seconds with image and LiDAR frames from multiple sensors, the quantity of which varies across different regions. Subsequent to data collection, a precise alignment between the camera and the LiDAR timelines is performed in a post-processing manner with a tolerance of 20 milliseconds, to arrive at a final frame rate of 10 Hz for the data episodes. For scene diversity and considering the specificity of the campus environment, we select the data based on sparsity of the scene and get an average of 10 targets per LiDAR frame. Moreover, around 20% of the data frames are recorded in the evening and 80% in the daytime including morning, noon, and dusk with clear and cloudy weather conditions. The diversity within the CORP dataset would enable the robustness of perception algorithms to various campus-specific backgrounds and lighting conditions. Some samples in the dataset with their ground-truch annotations are shown below.
+                    </p>
+                    <!--
+                        <div class="col-md-7 order-2 order-md-1 pt-5"></div>
+                    -->
+                    <style>
+                        figcaption {
+                        text-align: center;
+                        }
+                    </style>
+                    <figure id="data_samples">
+                        <img src="assets/img/data_samples.png" style="width: 100%">
+                        <figcaption id="data_samples">Fig. 3: CORP image examples with (a) 3D annotations, (b) 2D boxes, and (c) segmentation masks. All are images taken from different cameras, with illumination diminishing from the top, and note that each image has all of the mentioned annotations.
+                        </figcaption>
+                    </figure>
 
                     <span class="anchor" id="data_format"></span>
+                    <div class="col-md-7 order-2 order-md-1 pt-5"></div>
                     <h3><b>Annotation Format</b></h3>
-                    <p> The annotation file is similar to the <b>DAIR-V2X-i</b> format and store in JSON file.</p>
+                    <h4><b>Coordinate Systems</b></h4>
+                    <p> We have constructed four types of coordinate systems for the CORP dataset, of which two are used for LiDAR sensors, one for cameras, and the last one for the global map, as illustrated in <a href="#coord_sys"><b>Fig. 4</b></a>. For LiDARs, the LiDAR-ego reference frame originates from the sensor itself with the x-axis pointing forward and z-axis upward. For the convenience of researchers and to safeguard data privacy, we have constructed an additional virtual LiDAR coordinate system, termed as LiDAR-base, by transforming the origin of LiDAR-ego to the ground contact point of its host pole to comply its x-o-y plane with the local ground surface. For cameras, the origin of the camera-ego coordinate system overlaps the optical center of the sensor with the z-axis pointing forward along the camera's view and x-axis pointing leftward accordingly. While the LiDAR and camera coordinate systems capture objects in the sensor's field of view, the Map integrates the objects into a coherent global representation, aligning the x-axis with the eastern direction and the y-axis parallel to the northern direction, employing an origin anchored at a precisely determined set of GPS coordinates.
+                    </p>
+                    <div class="col-md-7 order-2 order-md-1 pt-5"></div>
+                    <style>
+                        figcaption {
+                          text-align: center;
+                        }
+                    </style>
+                    <figure id="coord_sys">
+                        <img src="assets/img/corp_coordinate_systems.png" style="width: 100%">
+                        <figcaption id="coord_sys">Fig. 4: An overview of 4 types of coordinate systems involved in CORP, i.e., Camera-ego, LiDAR-ego, LiDAR-base and Map systems. On the right side is an illustration of their calibration relationships, where double-headed arrows denote the presence of calibration parameters .</figcaption>
+                    </figure>
+
+
                     <h4><b>3D annotations:</b></h4>
+                    <p> The annotation file is similar to the <b>DAIR-V2X-i</b> format and store in JSON file.</p>
                     <pre style="text-align: left; white-space: pre; display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);">
                         <code>
                             [
@@ -189,29 +210,8 @@
                     </ol>
                     -->
                     <p>
-                        The data annotation format and file organization is similar to that of <b>DAIR-V2X-i</b>, which is described below. 
                         We will release the development tookit for data visualization, model training and evaluation soon on our project page.
                     </p>
-
-                    <pre style="text-align: left; white-space: pre; display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);">
-                        <code>
-                            <b>CORP/</b>                       
-                                |---images                      
-                                    |---*.jpg                   -- RGB and IR images
-                                |---velodyne
-                                    |---*.pcd                   -- point clouds
-                                |---calib
-                                    |---camera_intrinsic
-                                        |---*.json              -- intrinsic parameters for each image
-                                    |---virtuallidar_to_camera 
-                                        |---*.json              -- extrinsic parameters for each image
-                                |---label
-                                    |---camera
-                                        |---*.json              -- 2d labels
-                                    |---virtuallidar
-                                        |---*.json              -- 3d labels in virtuallidar coordinate system
-                        </code>
-                    </pre>
 
                     <div class="row aos-init aos-animate" data-aos="fade-up">
                         <div class="col-md-7 order-2 order-md-1 pt-5"></div>                         
@@ -223,17 +223,12 @@
                         Download links for CORP dataset:
                     </p>
                     <p>
-                        <b>- Labeled subset:</b>  [<a href="" target="_blank">Available Soon</a>]
-                        <!-- https://rec.ustc.edu.cn/share/07b436b0-74c2-11ee-b57d-c58d81461ef4 -->
+                        <b>- Labeled subset:</b>  [<a href="documentation.html#link">Available Soon</a>]
+                        
                     </p>
                     <p>
-                        <b>- Unlabled subset:</b>  [<a href="" target="_blank">Available Soon</a>]
-                        <!-- https://rec.ustc.edu.cn/share/3e068200-74c8-11ee-ba09-73f2a3ae85ee -->
+                        <b>- Unlabled subset:</b>  [<a href="documentation.html#link">Available Soon</a>]
                     </p>
-                    <!--
-                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-                    -->
                     <div class="row aos-init aos-animate" data-aos="fade-up">
                         <div class="col-md-7 order-2 order-md-1 pt-5"> 
                     </div>
